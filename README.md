@@ -36,8 +36,8 @@ That's it! Sites that no longer work properly in older versions of Chromium (suc
 
 ## Specific Polyfills
 
-- [globalThis](https://mathiasbynens.be/notes/globalthis), which provides `this` in global scope. This was only added to Chromium in version 71.
-- [fromEntries](https://stackoverflow.com/a/68655198/)
+- [globalThis](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis), which provides `this` in global scope. This was only added to Chromium in version 71.
+- [fromEntries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries), which was only added to Chromium in version 73
 
 More polyfills may be added over time to expand compatability, especially as breakage continues to increase. Contributions to add more polyfills are welcome.
 
