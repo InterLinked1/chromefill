@@ -37,8 +37,14 @@ That's it! Sites that no longer work properly in older versions of Chromium (suc
 ## Specific Polyfills
 
 - [globalThis](https://mathiasbynens.be/notes/globalthis), which provides `this` in global scope. This was only added to Chromium in version 71.
+- [fromEntries](https://stackoverflow.com/a/68655198/)
 
 More polyfills may be added over time to expand compatability, especially as breakage continues to increase. Contributions to add more polyfills are welcome.
+
+## Sites Known To Have Breakage Fixed By This Extension
+- **StackExchange** (globalThis)
+- **Canvas** (globalThis)
+- **Discord** (fromEntries)
 
 ## Will the extension be upgraded to Manifest V3?
 
