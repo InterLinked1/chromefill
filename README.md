@@ -38,6 +38,7 @@ That's it! Sites that no longer work properly in older versions of Chromium (suc
 
 - [globalThis](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis), which provides `this` in global scope. This was only added to Chromium in version 71.
 - [fromEntries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries), which was only added to Chromium in version 73
+- [queueMicroTask](https://developer.mozilla.org/en-US/docs/Web/API/queueMicrotask), which was only added to Chromium in version 71.
 
 More polyfills may be added over time to expand compatability, especially as breakage continues to increase. Contributions to add more polyfills are welcome.
 
@@ -45,6 +46,7 @@ More polyfills may be added over time to expand compatability, especially as bre
 - **StackExchange** (globalThis)
 - **Canvas** (globalThis)
 - **Discord** (fromEntries)
+- **Discourse** (queueMicroTask)
 
 ## Will the extension be upgraded to Manifest V3?
 
