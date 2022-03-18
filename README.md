@@ -39,14 +39,24 @@ That's it! Sites that no longer work properly in older versions of Chromium (suc
 - [globalThis](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis), which provides `this` in global scope. This was only added to Chromium in version 71.
 - [fromEntries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries), which was only added to Chromium in version 73
 - [queueMicroTask](https://developer.mozilla.org/en-US/docs/Web/API/queueMicrotask), which was only added to Chromium in version 71.
+- [Promise.any](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any), which was only added to Chromium in version 85.
+- [Promise.allSettled](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled), which was only added to Chromium in version 76.
+- [String.replaceAll](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll), which was only added to Chromium in version 85.
+- [replaceChildren](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren), which was only added to Chromium in version 86.
 
 More polyfills may be added over time to expand compatability, especially as breakage continues to increase. Contributions to add more polyfills are welcome.
 
-## Sites Known To Have Breakage Fixed By This Extension
+## Sites Known To Have Breakage Fixed By This Extension*
 - **StackExchange** (globalThis)
 - **Canvas** (globalThis)
 - **Discord** (fromEntries)
 - **Discourse** (queueMicroTask)
+
+\* Some breakage historically has been fixed, but new breakage may well have later been introduced that remains unaddressed.
+
+## Nullish Coalescing and Optional Chaining
+
+[Nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) and [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) are the two villains at large today, completely unsupported by UXP and Chromium < 85. These operators likely can't be polyfilled, and will need to be transpiled on the fly. This is a known issue that will need to be addressed to unbreak a growing amount of the breakage that exists on the web today.
 
 ## Will the extension be upgraded to Manifest V3?
 
