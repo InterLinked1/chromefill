@@ -56,7 +56,7 @@ More polyfills may be added over time to expand compatability, especially as bre
 
 ## Nullish Coalescing and Optional Chaining
 
-[Nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) and [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) are the two villains at large today, completely unsupported by UXP and Chromium < 85. These operators likely can't be polyfilled, and will need to be transpiled on the fly. This is a known issue that will need to be addressed to unbreak a growing amount of the breakage that exists on the web today.
+[Nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) and [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) are the two villains at large today, completely unsupported by UXP and Chromium < 80. These operators likely can't be polyfilled, and will need to be transpiled on the fly. This is a known issue that will need to be addressed to unbreak a growing amount of the breakage that exists on the web today.
 
 ## Will the extension be upgraded to Manifest V3?
 
