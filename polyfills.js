@@ -123,9 +123,9 @@ if (typeof queueMicrotask !== "function") {
   }
 }
 })();
+queueMicrotask(() => 0);
 
-queueMicrotask(() => console.log('microtask'));
-console.log('sync');
+
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
 // implemented in Chrome 85
 // https://vanillajstoolkit.com/polyfills/stringreplaceall/
@@ -165,5 +165,7 @@ script.remove();
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat
 // implemented in Chrome 71
 var intlocscript = document.createElement('script');
+// XXX: This can violate Content Security Policies, but should work on many sites
 intlocscript.src= 'https://polyfill.io/v3/polyfill.min.js?features=Intl.RelativeTimeFormat,Intl.RelativeTimeFormat.~locale.en';
 (document.head||document.documentElement).appendChild(intlocscript);
+intlocscript.remove();
