@@ -47,6 +47,9 @@ That's it! Sites that no longer work properly in older versions of Chromium (suc
 
 More polyfills may be added over time to expand compatability, especially as breakage continues to increase. Contributions to add more polyfills are welcome.
 
+## Other Fixes
+Medium.com sites erroneously block certain user agents, in particular user agents with the word "Iron" in them. This extension removes the word Iron from any offending user agents so that medium.com sites work.
+
 ## Sites Known To Have Breakage Fixed By This Extension*
 - **GitHub** (globalThis) - currently partially broken again due to nullish coalescing and optional chaining (see below)
 - **StackExchange** (globalThis)
@@ -55,6 +58,7 @@ More polyfills may be added over time to expand compatability, especially as bre
 - **Discourse** (queueMicroTask)
 - **Rockstar Social Club** (Intl.RelativeTimeFormat)
 - **Spotify** (Intl.RelativeTimeFormat)
+- **Medium** (user agent blocking)
 
 \* Some breakage historically has been fixed, but new breakage may well have later been introduced that remains unaddressed.
 
