@@ -43,20 +43,26 @@ That's it! Sites that no longer work properly in older versions of Chromium (suc
 - [Promise.allSettled](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled), which was only added to Chromium in version 76.
 - [String.replaceAll](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll), which was only added to Chromium in version 85.
 - [replaceChildren](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren), which was only added to Chromium in version 86.
+- [Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat), which was only added to Chromium in version 71.
 
 More polyfills may be added over time to expand compatability, especially as breakage continues to increase. Contributions to add more polyfills are welcome.
 
 ## Sites Known To Have Breakage Fixed By This Extension*
+- **GitHub** (globalThis) - currently partially broken again due to nullish coalescing and optional chaining (see below)
 - **StackExchange** (globalThis)
 - **Canvas** (globalThis)
 - **Discord** (fromEntries)
 - **Discourse** (queueMicroTask)
+- **Rockstar Social Club** (Intl.RelativeTimeFormat)
+- **Spotify** (Intl.RelativeTimeFormat)
 
 \* Some breakage historically has been fixed, but new breakage may well have later been introduced that remains unaddressed.
 
 ## Nullish Coalescing and Optional Chaining
 
 [Nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) and [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) are the two villains at large today, completely unsupported by UXP and Chromium < 80. These operators likely can't be polyfilled, and will need to be transpiled on the fly. This is a known issue that will need to be addressed to unbreak a growing amount of the breakage that exists on the web today.
+
+If you encounter either of these operators on a website, you should complain to the webmaster or file a support ticket. Because these can't be polyfilled, the use of these operators forms a serious accessibility barrier for browsers and they should be avoided in all web development.
 
 ## Will the extension be upgraded to Manifest V3?
 
