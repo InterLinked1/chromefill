@@ -161,3 +161,9 @@ var script = document.createElement('script');
 script.textContent = actualCode;
 (document.head||document.documentElement).appendChild(script);
 script.remove();
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat
+// implemented in Chrome 71
+var intlocscript = document.createElement('script');
+intlocscript.src= 'https://polyfill.io/v3/polyfill.min.js?features=Intl.RelativeTimeFormat,Intl.RelativeTimeFormat.~locale.en';
+(document.head||document.documentElement).appendChild(intlocscript);
