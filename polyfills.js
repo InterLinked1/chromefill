@@ -155,6 +155,20 @@ if (!String.prototype.replaceAll) {
     }
   }
 }());
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll
+// implemented in Chrome 73
+// https://gist.github.com/TheBrenny/039add509c87a3143b9c077f76aa550b#file-matchall-polyfill-js
+if (!String.prototype.matchAll) {
+    String.prototype.matchAll = function (rx) {
+        if (typeof rx === "string") rx = new RegExp(rx, "g"); // coerce a string to be a global regex
+        rx = new RegExp(rx); // Clone the regex so we don't update the last index on the regex they pass us
+        let cap = []; // the single capture
+        let all = []; // all the captures (return this)
+        while ((cap = rx.exec(this)) !== null) all.push(cap); // execute and add
+        return all; // profit!
+    };
+}
 `;
 
 var script = document.createElement('script');

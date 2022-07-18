@@ -44,6 +44,7 @@ That's it! Sites that no longer work properly in older versions of Chromium (suc
 - [String.replaceAll](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll), which was only added to Chromium in version 85.
 - [replaceChildren](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren), which was only added to Chromium in version 86.
 - [Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat), which was only added to Chromium in version 71.
+- [String.matchAll](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll), which was only added to Chromium in version 73.
 
 More polyfills may be added over time to expand compatability, especially as breakage continues to increase. Contributions to add more polyfills are welcome.
 
