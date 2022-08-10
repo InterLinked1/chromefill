@@ -1,6 +1,6 @@
 chrome.webRequest.onBeforeSendHeaders.addListener(
-    function(details) {
-        for (var i = 0; i < details.requestHeaders.length; ++i) {
+	function(details) {
+		for (var i = 0; i < details.requestHeaders.length; ++i) {
 			if (details.requestHeaders[i].name !== 'User-Agent') {
 				continue;
 			}
@@ -20,5 +20,5 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 			}
 			break;
         }
-        return {requestHeaders: details.requestHeaders};
-    }, {urls: ['<all_urls>']}, ['blocking', 'requestHeaders']);
+		return {requestHeaders: details.requestHeaders};
+	}, {urls: ['<all_urls>']}, ['blocking', 'requestHeaders']);
