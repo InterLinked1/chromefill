@@ -46,13 +46,19 @@ That's it! Sites that no longer work properly in older versions of Chromium (suc
 - [Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat), which was only added to Chromium in version 71.
 - [String.matchAll](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll), which was only added to Chromium in version 73 (version 69 with optional flag enabled).
 
+Transpiling is also done on the fly to address:
+- [Nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator), which was only added to Chromium in version 80
+- [Optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining), which was only added to Chromium in version 80
+
+However, this functionality is disabled by default and only enabled on a per-site basis (see below).
+
 More polyfills may be added over time to expand compatability, especially as breakage continues to increase. Contributions to add more polyfills are welcome.
 
 ## Other Fixes
 Medium.com sites erroneously block certain user agents, in particular user agents with the word "Iron" in them. This extension removes the word Iron from any offending user agents so that medium.com sites work.
 
 ## Sites Known To Have Breakage Fixed By This Extension*
-- **GitHub** (globalThis) - currently partially broken again due to nullish coalescing and optional chaining (see below)
+- **GitHub** (globalThis, nullish coalescing)
 - **StackExchange** (globalThis)
 - **Canvas** (globalThis)
 - **Discord** (fromEntries)
@@ -68,6 +74,8 @@ Medium.com sites erroneously block certain user agents, in particular user agent
 [Nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) and [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) are the two villains at large today, completely unsupported by UXP and Chromium < 80. These operators likely can't be polyfilled, and will need to be transpiled on the fly. This is a known issue that will need to be addressed to unbreak a growing amount of the breakage that exists on the web today.
 
 If you encounter either of these operators on a website, you should complain to the webmaster or file a support ticket. Because these can't be polyfilled, the use of these operators forms a serious accessibility barrier for browsers and they should be avoided in all web development.
+
+Currently, this is some experimental support in this extension for auto transpiling using Babel standalone in order to address this syntax incompatibility. However, this is slow, and CPU and memory intensive. It is really only intended as a last resort. It is not a solution. For this reason, this functionality is not enabled by default and is whitelisted on a per-site basis.
 
 ## Will the extension be upgraded to Manifest V3?
 
