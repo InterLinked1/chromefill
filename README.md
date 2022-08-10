@@ -59,7 +59,7 @@ Medium.com sites erroneously block certain user agents, in particular user agent
 - **Discourse** (queueMicroTask)
 - **Rockstar Social Club** (Intl.RelativeTimeFormat)
 - **Spotify** (Intl.RelativeTimeFormat)
-- **Medium** (user agent blocking)
+- **Medium**, **Slack** (user agent blocking)
 
 \* Some breakage historically has been fixed, but new breakage may well have later been introduced that remains unaddressed.
 
