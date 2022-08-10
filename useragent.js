@@ -19,6 +19,6 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 				details.requestHeaders[i].value = new_agent;
 			}
 			break;
-        }
+		}
 		return {requestHeaders: details.requestHeaders};
 	}, {urls: ['<all_urls>']}, ['blocking', 'requestHeaders']);
