@@ -1,7 +1,7 @@
 chrome.webRequest.onBeforeSendHeaders.addListener(
     function(details) {
         for (var i = 0; i < details.requestHeaders.length; ++i) {
-            if (details.requestHeaders[i].name !== 'User-Agent') {
+			if (details.requestHeaders[i].name !== 'User-Agent') {
 				continue;
 			}
 			var current_agent = details.requestHeaders[i].value;
