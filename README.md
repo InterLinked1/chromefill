@@ -2,6 +2,18 @@
 
 Automatically injects polyfills for old Chromium into webpages
 
+### 2023 Update
+
+This extension should now be considered deprecated and is no longer being maintained. This is because, as of 2023, a large majority of sites are now using functionality that can no longer be polyfilled in old versions of Chromium (see nullish coalescing and optional chaining section, below), and there is no usable auto-transpiling support in this extension. At this point, the limits of using a 4-5 year old browser are becoming more and more insurmountable.
+
+If you are still using this extension, you may want to use the revision prior to experimental auto-transpiling being added: https://github.com/InterLinked1/chromefill/tree/e2c1ee5c5b5e52505540bb0fd59800d97ffb92fc
+
+(In practice, the auto-transpiling doesn't really work, but just makes some pages load forever and then crash, so you may as well just have it fail immediately.)
+
+Additionally, keep in mind that many sites simply will no longer work properly and there is nothing that polyfilling can do about this.
+
+This repository will remain available, but will likely no longer see active updates. If there is functionality addressed (or that could be addressed) by this extension that still can be addressed through polyfilling, you are welcome to open an issue.
+
 ## Background
 
 Many users of non-recent Chromium and Firefox browsers noticed in Q4 of 2021 that a lot of websites suddenly stopped working, partially (and in rare cases, completely), within a few weeks of each other. This was due to the adoption of newer JavaScript standards, many bleeding-edge or vendor-specific, and highly-compatible standards-based JavaScript was replaced with this newer code that caused sites to malfunction in older (in the case of Chromium) and other (in the case of non-Chromium and Firefox) browsers. This meant that sites which *used* to work perfectly fine in these browsers no longer did.
