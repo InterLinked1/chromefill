@@ -10,28 +10,12 @@
 		"https://*/*",
 		"http://*/*"
 	],
-    "content_scripts": [
-		{
-			"matches": [
-				"https://github.com/*" // GitHub, at present, insists on using the evil nullish coalescing and optional chaining
-				// Add other sites here that use evil nullish coalescing and optional chaining. If we can get by with just polyfills, don't transpile.
-				// Avoid transpiling except as a last resort, because it's SLOW and blocking, not to mention VERY memory and CPU intensive
-				// e.g. GitHub takes 15 seconds on my machine to transpile
-			],
-			"js": [
-				"babel.min.js"
-			],
-			"run_at": "document_start",
-			"all_frames": true
-		},
-		{
+    "content_scripts": [{
 			"matches": [
 				"https://*/*",
 				"http://*/*"
 			],
-			"js": [
-				"polyfills.js"
-			],
+			"js": ["polyfills.js"],
 			"run_at": "document_start",
 			"all_frames": true
 		}
