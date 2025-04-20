@@ -2,17 +2,11 @@
 
 Automatically injects polyfills for old Chromium into webpages
 
-### 2023 Update
+### Note for (very) old versions of Chromium
 
-This extension should now be considered deprecated and is no longer being maintained. This is because, as of 2023, a large majority of sites are now using functionality that can no longer be polyfilled in old versions of Chromium (see nullish coalescing and optional chaining section, below), and there is no usable auto-transpiling support in this extension. At this point, the limits of using a 4-5 year old browser are becoming more and more insurmountable.
+This extension will no longer work well for *very* old versions of Chromium (released prior to 2020). This is because, as of 2023, a large majority of sites are now using functionality that can no longer be polyfilled in old versions of Chromium (see nullish coalescing and optional chaining section, below), and there is no way such functionality can be polyfilled.
 
-If you are still using this extension, you may want to use the revision prior to experimental auto-transpiling being added: https://github.com/InterLinked1/chromefill/tree/e2c1ee5c5b5e52505540bb0fd59800d97ffb92fc
-
-(In practice, the auto-transpiling doesn't really work, but just makes some pages load forever and then crash, so you may as well just have it fail immediately.)
-
-Additionally, keep in mind that many sites simply will no longer work properly and there is nothing that polyfilling can do about this.
-
-This repository will remain available, but will likely no longer see active updates. If there is functionality addressed (or that could be addressed) by this extension that still can be addressed through polyfilling, you are welcome to open an issue.
+This extension is thus severely degraded in the Chromium version it was initially written to target (Chromium 70), but may still allow slightly newer browsers (e.g. Chromium 109) to function.
 
 ## Background
 
@@ -57,6 +51,9 @@ That's it! Sites that no longer work properly in older versions of Chromium (suc
 - [replaceChildren](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren), which was only added to Chromium in version 86.
 - [Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat), which was only added to Chromium in version 71.
 - [String.matchAll](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll), which was only added to Chromium in version 73 (version 69 with optional flag enabled).
+- [Array.toReversed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed), which was only added to Chromium in version 110.
+- [Array.toSpliced](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced), which was only added to Chromium in version 110.
+- [Array.with](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with), which was only added to Chromium in version 110.
 
 More polyfills may be added over time to expand compatability, especially as breakage continues to increase. Contributions to add more polyfills are welcome.
 

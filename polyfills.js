@@ -169,6 +169,38 @@ if (!String.prototype.matchAll) {
         return all; // profit!
     };
 }
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed
+// implemented in Chrome 110
+// https://msfn.org/board/topic/185918-arcticfoxienotheretoplaygames-360chrome-v1351030-redux/page/11/#findComment-1278337
+if (!Array.prototype.toReversed) {
+	Array.prototype.toReversed = function () {
+		return this.slice().reverse();
+	};
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced
+// implemented in Chrome 110
+// https://msfn.org/board/topic/185918-arcticfoxienotheretoplaygames-360chrome-v1351030-redux/page/11/#findComment-1278337
+if (!Array.prototype.toSpliced) {
+	Array.prototype.toSpliced = function (start, deleteCount, ...items) {
+		const copy = this.slice();
+		copy.splice(start, deleteCount, ...items);
+		return copy;
+	};
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with
+// implemented in Chrome 110
+// https://msfn.org/board/topic/185918-arcticfoxienotheretoplaygames-360chrome-v1351030-redux/page/11/#findComment-1278337
+if (!Array.prototype.with) {
+	Array.prototype.with = function (index, value) {
+		const copy = this.slice();
+		copy[index] = value;
+		return copy;
+	};
+}
+
 `;
 
 var script = document.createElement('script');
