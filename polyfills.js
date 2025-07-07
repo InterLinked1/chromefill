@@ -212,6 +212,6 @@ script.remove();
 // implemented in Chrome 71
 var intlocscript = document.createElement('script');
 // XXX: This can violate Content Security Policies, but should work on many sites
-intlocscript.src= 'https://polyfill.io/v3/polyfill.min.js?features=Intl.RelativeTimeFormat,Intl.RelativeTimeFormat.~locale.en';
+intlocscript.src= 'https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=Intl.RelativeTimeFormat,Intl.RelativeTimeFormat.~locale.en';
 (document.head||document.documentElement).appendChild(intlocscript);
 intlocscript.remove();
